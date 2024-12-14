@@ -877,7 +877,7 @@ export default function BuyGoldPage() {
     if (value === "") {
       setWeight("");
     } else {
-      const priceWithoutGST = parseFloat(value) / (1 + gstRate);
+      const priceWithoutGST = parseFloat(value) / (1 + taxRate);
       const weightInGrams = priceWithoutGST / goldPricePerGram;
       
 
@@ -894,7 +894,7 @@ export default function BuyGoldPage() {
       setPrice("");
     } else {
       const priceWithoutGST = parseFloat(value) * goldPricePerGram;
-      const totalPrice = priceWithoutGST * (1 + gstRate);
+      const totalPrice = priceWithoutGST * (1 + taxRate);
       setPrice(totalPrice.toFixed(2));  
       // const totalPrice = parseFloat(value) * goldPricePerGram;
       // setPrice(totalPrice.toFixed(2));
